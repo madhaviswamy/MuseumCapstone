@@ -24,8 +24,8 @@ public class Artist {
     private Museum museum;
 
     //wriring to Paintings
-    @OneToMany
-    @JoinColumn(name = "artists")
+    @JsonManagedReference
+    @OneToMany(mappedBy = "artist")
     private List<Painting> paintings;
 
     public Artist(){}

@@ -14,7 +14,7 @@ public interface PaintingService {
 
     List<Painting> searchByPName(String name);
 
-    //<Painting> findByYearCompleted(int yearCompleted);
+    List<Painting> findByYearCompleted(int yearCompleted);
 
-    List<Painting> findByNameAndSort(String name, Sort sort);
+    List<Painting> findByNameAndSort(String name);
 }

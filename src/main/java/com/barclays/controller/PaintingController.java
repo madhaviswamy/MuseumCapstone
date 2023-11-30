@@ -37,13 +37,14 @@ public class PaintingController {
         return paintingService.searchByPName(name);
     }
 
-//    @GetMapping("/paintings/yearcompleted")
-//    public List<Painting>findByYearCompleted(@PathParam("yearCompleted") int yearCompleted){
-//        return paintingService.findByYearCompleted(yearCompleted);
-//    }
+    @GetMapping("/paintings/yearcompleted")
+    public List<Painting>findByYearCompleted(@PathParam("yearCompleted") String yearCompleted){
+        log.debug(yearCompleted);
+        return paintingService.findByYearCompleted(Integer.valueOf(yearCompleted));
+    }
 
     @GetMapping("/paintings/sort")
-    public List<Painting>findByNameAndSort(@PathParam("name") String name, Sort sort){
-        return paintingService.findByNameAndSort(name, sort);
+    public List<Painting>findByNameAndSort(@PathParam("name") String name){
+        return paintingService.findByNameAndSort(name);
     }
 }

@@ -15,17 +15,17 @@ public class Painting {
     @GeneratedValue
     private int id;
     //@OneToOne(cascade = CascadeType.ALL)
-    private Artist artist;
+    //private Artist artist;
     private String name;
     private int yearCompleted;
     private String style;
     private String medium;
     private String backstory;
 
-    //@JsonBackReference
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "artist_id")
-    Artist artists;
+    Artist artist;
 
     public Painting(){}
 
@@ -35,14 +35,6 @@ public class Painting {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Artist getArtist() {
-        return artist;
-    }
-
-    public void setArtist(Artist artist) {
-        this.artist = artist;
     }
 
     public String getName() {
@@ -85,13 +77,12 @@ public class Painting {
         this.backstory = backstory;
     }
 
-    public Painting(String name){
+    public Painting(String name, int yearCompleted){
         this.name = name;
-        //this.yearCompleted=yearCompleted;
+        this.yearCompleted=yearCompleted;
     }
 
-    public Painting(Artist artist, String name, int yearCompleted, String style, String medium, String backstory) {
-        this.artist = artist;
+    public Painting(String name, int yearCompleted, String style, String medium, String backstory) {
         this.name = name;
         this.yearCompleted = yearCompleted;
         this.style = style;

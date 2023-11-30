@@ -21,11 +21,13 @@ public class PaintingServiceIMPL implements PaintingService{
     @Override
     public List<Painting> findAll() {
 
-        List<Painting> paintings = new ArrayList<>();
-        Iterable<Painting> paintingsIts = paintingRepository.findAll();
-        paintingsIts.forEach(paintings::add);
+//        List<Painting> paintings = new ArrayList<>();
+//        Iterable<Painting> paintingsIts = paintingRepository.findAll(Sort.by("name").ascending());
+        //paintingsIts.forEach(paintings::add);
 
-        return paintings;
+        //return paintings;
+
+        return paintingRepository.findAll(Sort.by("name").descending());
     }
 
     @Override
@@ -37,14 +39,15 @@ public class PaintingServiceIMPL implements PaintingService{
     }
 
     @Override
-    public List<Painting> findByNameAndSort(String name, Sort sort) {
-        List<Painting> paintings = paintingRepository.findByNameAndSort(name, Sort.by("name").ascending());
+    public List<Painting> findByNameAndSort(String name) {
+        List<Painting> paintings = paintingRepository.findByName(name, Sort.by("name").descending());
         return paintings;
     }
-    //tutorials = tutorialRepository.findByTitleAndSort("at", Sort.by("createdAt").descending());
-//    @Override
-//    public List<Painting> findByYearCompleted(int yearCompleted) {
-//        List<Painting> paintings = paintingRepository.findByYearCompleted(yearCompleted);
-//        return paintings;
-//    }
+
+
+    @Override
+    public List<Painting> findByYearCompleted(int yearCompleted) {
+        List<Painting> paintings = paintingRepository.findByYearCompleted(yearCompleted);
+        return paintings;
+    }
 }
