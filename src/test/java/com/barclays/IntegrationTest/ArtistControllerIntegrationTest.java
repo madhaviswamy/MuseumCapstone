@@ -19,7 +19,7 @@ public class ArtistControllerIntegrationTest {
     @Test
     public void testGetAllArtists(){
         List<Artist> artists = artistController.getAllArtists();
-        assertEquals(2, artists.size());
+        assertEquals(3, artists.size());
     }
 
 //    @Test

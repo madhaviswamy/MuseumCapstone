@@ -25,20 +25,7 @@ public class Museum {
     @JoinColumn(name = "museum")
     private List<Artist> artists;
 
-//    @JsonBackReference
-//    @ManyToOne(cascade = CascadeType.MERGE)
-//    @JoinColumn(name = "artist_id")
-//    Artist artist;
-
-    //many to many
-//    @ManyToMany(mappedBy = "museums")
-//    private List<Artist> artists;
-
     public Museum(){}
-
-//    public Museum(String name){
-//        this.name = name;
-//    }
 
     public Museum(String name, String location){
         this.name = name;

@@ -21,7 +21,7 @@ public class ArtistControllerTests {
                 restTemplate.getForEntity("http://localhost:8080/artists", Artist[].class);
         Artist[] artists = response.getBody();
 
-        assertEquals(artists.length, 2);
+        assertEquals(artists.length, 3);
     }
 
 //    @Test

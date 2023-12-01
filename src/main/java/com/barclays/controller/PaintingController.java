@@ -39,7 +39,7 @@ public class PaintingController {
 
     @GetMapping("/paintings/yearcompleted")
     public List<Painting>findByYearCompleted(@PathParam("yearCompleted") String yearCompleted){
-        log.debug(yearCompleted);
+        //log.debug(yearCompleted);
         return paintingService.findByYearCompleted(Integer.valueOf(yearCompleted));
     }
 
