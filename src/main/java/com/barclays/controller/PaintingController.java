@@ -1,6 +1,7 @@
 package com.barclays.controller;
 
 import com.barclays.model.Artist;
+import com.barclays.model.Museum;
 import com.barclays.model.Painting;
 import com.barclays.service.ArtistService;
 import com.barclays.service.PaintingService;
@@ -9,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
@@ -31,6 +33,11 @@ public class PaintingController {
         return paintings;
     }
 
+    @GetMapping("/paintings/{id}")
+    public Painting getPainting(@PathVariable int id){
+        return paintingService.findById(id);
+    }
+
     @GetMapping("/paintings/search")
     public List<Painting>searchByPName(@PathParam("name") String name) {
         //log.debug(name);
@@ -43,8 +50,4 @@ public class PaintingController {
         return paintingService.findByYearCompleted(Integer.valueOf(yearCompleted));
     }
 
-    @GetMapping("/paintings/sort")
-    public List<Painting>findByNameAndSort(@PathParam("name") String name){
-        return paintingService.findByNameAndSort(name);
-    }
 }

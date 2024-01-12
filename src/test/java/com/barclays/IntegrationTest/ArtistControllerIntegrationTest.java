@@ -22,9 +22,9 @@ public class ArtistControllerIntegrationTest {
         assertEquals(3, artists.size());
     }
 
-//    @Test
-//    public void testGetArtist(){
-//        Artist artist = artistController.getArtists(1);
-//        assertEquals("Vincent Van Gogh", artist.getName());
-//    }
+    @Test
+    public void testGetArtist(){
+        Artist artist = artistController.getArtist(150);
+        assertEquals("Vincent Van Gogh", artist.getName());
+    }
 }

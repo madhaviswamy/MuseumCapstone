@@ -9,6 +9,7 @@ import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
@@ -40,5 +41,10 @@ public class MuseumController {
     @GetMapping("/museums/location/search")
     public List<Museum>searchByLocation(@Param("location") String location){
         return museumService.searchByLocation(location);
+    }
+
+    @GetMapping("/museums/{id}")
+    public Museum getMuseum(@PathVariable int id){
+        return museumService.findById(id);
     }
 }
