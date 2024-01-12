@@ -22,8 +22,4 @@ public interface PaintingRepository extends JpaRepository<Painting, Integer> {
             "FROM Painting y WHERE y.yearCompleted >=?1")
     List<Painting> findByYearCompleted(@PathParam("yearCompleted") int yearCompleted);
 
-    List<Painting> findByName(String name, Sort sort);
-
-
-
 }

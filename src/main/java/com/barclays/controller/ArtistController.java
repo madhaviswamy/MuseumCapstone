@@ -32,17 +32,8 @@ public class ArtistController {
 
     @GetMapping("/artists/{id}")
     public Artist getArtist(@PathVariable int id){
-        return artistService.findById(1);
+        return artistService.findById(id);
     }
 
-    @GetMapping("/artists/search")
-    public List<Artist>searchByName(@PathParam("name") String name) {
-        return artistService.searchByName(name);
-    }
-
-//    @PostMapping("/artist")
-//    public Artist createArtist(@RequestBody Artist artist) {
-//        return artistService.save(artist);
-//    }
 
 }

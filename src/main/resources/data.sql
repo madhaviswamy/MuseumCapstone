@@ -1,11 +1,6 @@
 insert into Museum (id, curator, location, name ) values(100, 'Pete', 'London', 'British Museum');
 insert into Museum (id, curator, location, name ) values(200, 'Hank', 'Paris', 'Louvre');
 
---insert into Museum (artist_id, id, curator, location, name ) values(150, 100, 'Pete', 'Denmark', 'Emma');
---insert into Museum (artist_id, id, curator, location, name ) values(250, 200, 'Hank', 'Albuquerque', 'Walter White');
-
---insert into Artist (id, year_born, year_down, name ) values(150, 2001, 2023, 'Vincent Van Gogh');
---insert into Artist (id, year_born, year_down, name ) values(250, 1988, 2009, 'Leonardo-Da-Vinci');
 
 insert into Artist (id, museum_id, year_born, year_down, name ) values(150, 100, 2001, 2023, 'Vincent Van Gogh');
 insert into Artist (id, museum_id, year_born, year_down, name ) values(250, 200, 1988, 2009, 'Leonardo-Da-Vinci');
